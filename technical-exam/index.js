@@ -7,7 +7,7 @@ function getCommonPrefix(inputData) {
     let result = "";
     let end = 2;
     let pre = String(data[0]).substring(0, end)
-    while (!data.find(x => !RegExp(pre).test(x))) {
+    while (!data.find(x => !RegExp(`^${pre}`).test(x))) {
         result = pre;
         pre = String(data[0]).substring(0, ++end)
     }
